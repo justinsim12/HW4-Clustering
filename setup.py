@@ -1,21 +1,22 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="kmeans_clustering",
+    name="cluster_analysis",  # Change to a unique package name
     version="0.1.0",
     author="Your Name",
     author_email="your.email@example.com",
     description="A simple implementation of KMeans and Silhouette Score",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/kmeans_clustering",
-    packages=find_packages(),
+    url="https://github.com/yourusername/cluster_analysis",  # Update with your repo
+    packages=find_packages(include=["cluster", "cluster.*"]),  # Ensure submodules are included
     install_requires=[
         "numpy",
         "scipy",
+        "matplotlib",
     ],
     extras_require={
-        "dev": ["pytest", "matplotlib"]
+        "dev": ["pytest"],
     },
     classifiers=[
         "Programming Language :: Python :: 3",
