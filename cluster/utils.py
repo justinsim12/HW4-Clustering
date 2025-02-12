@@ -26,7 +26,7 @@ def make_clusters(
             random seed
 
     outputs:
-        (np.ndarray, np.ndarray)
+        (np.ndarray, np.ndarray) mat, labels
             returns a 2D matrix of `n` observations and `m` features that are clustered into `k` groups
             returns a 1D array of `n` size that defines the cluster origin for each observation
     """
