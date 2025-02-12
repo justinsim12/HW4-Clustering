@@ -2,7 +2,7 @@
 import pytest
 import numpy as np
 from scipy.spatial.distance import cdist
-from cluster.kmeans import KMeans  # Assuming your class is in `kmeans.py`
+from cluster.kmeans import KMeans  
 
 @pytest.fixture
 def sample_data():
