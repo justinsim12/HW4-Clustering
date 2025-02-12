@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt || echo "No requirements.txt found, skipping..."
+          pip install -e .[dev]  # Ensures cluster/ is installed
 
       - name: Run tests with pytest
-        run: pytest --maxfail=1 --disable-warnings --tb=short
+        run: pytest test/
