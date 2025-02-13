@@ -16,7 +16,7 @@ setup(
         "matplotlib",
     ],
     extras_require={
-        "dev": ["pytest,sklearn"],
+        "dev": ["pytest","sklearn"],
     },
     classifiers=[
         "Programming Language :: Python :: 3",
