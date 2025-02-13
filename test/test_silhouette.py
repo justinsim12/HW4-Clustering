@@ -41,6 +41,7 @@ def test_silhouette_score_single_cluster(silhouette):
     y = np.array([0, 0, 0])  # All points in the same cluster
     
     scores = silhouette.score(X, y)
+    print(scores)
     assert np.all(scores == 0), "Silhouette score should be 0 for all points in a single cluster."
 
 def test_silhouette_score_perfect_clustering(silhouette):
