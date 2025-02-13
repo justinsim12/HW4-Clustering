@@ -1,7 +1,6 @@
 import numpy as np
 from scipy.spatial.distance import cdist
 
-
 class KMeans:
     def __init__(self, k: int, tol: float = 1e-6, max_iter: int = 100):
         """
@@ -84,8 +83,6 @@ class KMeans:
             self.centroids = new_centroids
             self.error = new_error
 
-
-
     def predict(self, mat: np.ndarray) -> np.ndarray:
         """
         Predicts the cluster labels for a provided matrix of data points--
@@ -127,6 +124,7 @@ class KMeans:
         if self.centroids is None:
                 raise ValueError("Model has not been fitted yet.")
         return self.error
+    
     def get_centroids(self) -> np.ndarray:
         """
         Returns the centroid locations of the fit model.

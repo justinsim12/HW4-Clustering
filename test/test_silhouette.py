@@ -1,7 +1,24 @@
 # write your silhouette score unit tests here
 import pytest
 import numpy as np
-from cluster.silhouette import Silhouette  # Import the class, not just `score`
+from cluster.silhouette import Silhouette
+from sklearn.metrics import silhouette_score
+
+def test_silhouette_vs_sklearn():
+    """Compare the custom Silhouette score function with sklearn's implementation."""
+    X = np.array([
+        [1.0, 2.0], [1.5, 1.8], [5.0, 8.0], [6.0, 9.0], [1.2, 1.9]
+    ])
+    y = np.array([0, 0, 1, 1, 0])  # Two clusters
+
+    silhouette = Silhouette()
+    custom_scores = silhouette.score(X, y)
+    sklearn_score = silhouette_score(X, y, metric='euclidean')
+
+    # Since `silhouette_score` in sklearn returns a single mean value, we compare means
+    assert np.isclose(np.mean(custom_scores), sklearn_score, atol=1e-5), (
+        f"Mismatch: Custom={np.mean(custom_scores):.5f}, Sklearn={sklearn_score:.5f}"
+    )
 
 @pytest.fixture
 def sample_data():
