@@ -1,15 +1,15 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="cluster_analysis",  # Change to a unique package name
+    name="cluster_analysis",
     version="0.1.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="Justin Sim",
+    author_email="justin.sim@ucsf.edu",
     description="A simple implementation of KMeans and Silhouette Score",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/cluster_analysis",  # Update with your repo
-    packages=find_packages(include=["cluster", "cluster.*"]),  # Ensure submodules are included
+    url="https://github.com/justinsim12/HW4-Clustering",  
+    packages=find_packages(include=["cluster", "cluster.*"]),  
     install_requires=[
         "numpy",
         "scipy",
